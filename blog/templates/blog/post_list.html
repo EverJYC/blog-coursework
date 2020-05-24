@@ -4,12 +4,12 @@
                 <div class="post">
 
                     <div class="date">
-                        published: {{ post.published_date }}
+                        <i class="far fa-calendar"></i>{{ post.published_date }}
                     </div>
 
                     <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                     <p>{{ post.text|linebreaksbr }}</p>
-                    <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+                    <a href="{% url 'post_detail' pk=post.pk %}"><i class="far fa-comment"></i> {{ post.approved_comments.count }}</a>
                 </div>
             {% endfor %}
 {% endblock %}
