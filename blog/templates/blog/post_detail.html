@@ -19,7 +19,12 @@
     </div>
 
     <hr>
-    <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+
+
+
+    <a class="comment-tabs" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+
+<div style="clear:both">
     {% for comment in post.comments.all %}
         <div class="comment">
             <div class="date">
@@ -27,7 +32,7 @@
                 {% if not comment.approved_comment %}
                 <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
                 <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
-            {% endif %}
+                {% endif %}
             </div>
             <strong>{{ comment.author }}</strong>
             <p>{{ comment.text|linebreaks }}</p>
@@ -35,4 +40,5 @@
     {% empty %}
         <p>No comments here yet :(</p>
     {% endfor %}
+    </div>
 {% endblock %}

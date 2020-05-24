@@ -49,3 +49,34 @@ h1, h2, h3, h4 {
 .comment {
     margin: 20px 0px 20px 20px;
 }
+
+/*.comment-tabs li a{*/
+/*    background: #f5f5f5;*/
+/*    border-radius: 10px;*/
+/*    font-weight: 600;*/
+/*    padding: 10px 14px;*/
+/*    margin-bottom: 4px;*/
+/*    display: block;*/
+/*    color: #aaa;*/
+/*}*/
+
+
+.comment-tabs {
+    margin-bottom: 30px;
+    color: #333;
+    float: left;
+    background: #f5f5f5;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 10px 14px;
+    display: block;
+}
+
+#wrapper {
+    background: #f5f5f5;
+    box-shadow: 0 0 40px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 40px auto;
+    max-width: 1200px;
+}
