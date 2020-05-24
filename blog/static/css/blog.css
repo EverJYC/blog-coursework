@@ -15,7 +15,9 @@
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    /*font-family: 'Lobster', cursive;*/
+    font-family: 'Vollkorn', serif;
+    font-weight:900;
 }
 
 .date {
@@ -39,7 +41,7 @@ h1, h2, h3, h4 {
 }
 
 .post {
-    margin-bottom: 70px;
+    margin: 30px 0px 30px 0px;
 }
 
 .post h2 a, .post h2 a:visited {
