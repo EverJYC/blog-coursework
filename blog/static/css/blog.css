@@ -73,6 +73,11 @@ h1, h2, h3, h4 {
     padding: 10px 14px;
     display: block;
 }
+.comment-tabs:hover {
+    text-decoration:none;
+    background: #e5e5e5;
+    color: #777;
+}
 
 #wrapper {
     background: #ffffff;
