@@ -4,6 +4,30 @@
     <h2>New post</h2>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+
+
+        <!-- 按钮触发模态框 -->
+        <a class="save btn btn-default" data-toggle="modal" data-target="#save_post">
+            Save
+        </a>
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="save_post" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        {#                <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>#}
+                    </div>
+                    <div class="modal-body">Do you want to save this post?</div>
+                    <div class="modal-footer">
+                        {#                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>#}
+                        <button type="submit" class="save btn btn-default">Yes</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+{#        <button type="submit" class="save btn btn-default">Save</button>#}
     </form>
 {% endblock %}
