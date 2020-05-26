@@ -1,13 +1,20 @@
 .page-header {
     background-color: #C25100;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 20px 20px 20px 20px;
+    height:150px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
+    /*align-content: center;*/
+}
+
+.top-logo{
+    position:relative;
+    top:-40px;
 }
 
 .content {
@@ -34,10 +41,26 @@ h1, h2, h3, h4 {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
+    list-style:none;
     color: #ffffff;
     float: right;
     font-size: 26pt;
     margin-right: 20px;
+}
+
+.my_li li{
+    list-style:none;
+}
+.top-menu li {
+    list-style:none;
+    color: #ffffff;
+    float: right;
+    font-size: 20pt;
+    margin-right: 20px;
+}
+
+.top-menu li span {
+    color: #ffffff;
 }
 
 .post {
@@ -97,6 +120,8 @@ h1, h2, h3, h4 {
     /*padding: 14px 14px;*/
     color: black;
 }
+
+
 
 /*  plugin : wp-pagenavi
 /* ------------------------------------ */
@@ -184,6 +209,7 @@ h1 > span {
   vertical-align: middle;
   white-space: normal;
 }
+
 
 
 /** page structure **/
