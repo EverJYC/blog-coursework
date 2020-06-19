@@ -1,176 +1,120 @@
-{#{% extends "blog/base.html" %}#}
-{##}
-{#{% block content %}#}
-{#    {% if form.errors %}#}
-{#        <p>Your username and password didn't match. Please try again.</p>#}
-{#    {% endif %}#}
-{##}
-{#    <form method="post" action="{% url 'login' %}">#}
-{#    {% csrf_token %}#}
-{#        <table>#}
-{#        <tr>#}
-{#            <td>{{ form.username.label_tag }}</td>#}
-{#            <td>{{ form.username }}</td>#}
-{#        </tr>#}
-{#        <tr>#}
-{#            <td>{{ form.password.label_tag }}</td>#}
-{#            <td>{{ form.password }}</td>#}
-{#        </tr>#}
-{#        </table>#}
-{##}
-{#        <input type="submit" value="login" />#}
-{#        <input type="hidden" name="next" value="{{ next }}" />#}
-{#    </form>#}
-{#{% endblock %}#}
-
-
-
-
 {% load static %}
 
-{#<!DOCTYPE html>#}
-{##}
-{#<head>#}
-{#  <meta charset="utf-8">#}
-{#    <title>登录 - 简书</title>#}
-{##}
-{##}
-{##}
-{#    <link rel="stylesheet" href="{% static 'css/web-aec5e95c7d38e6d93742.css' %}">#}
-{#    <link rel="stylesheet" href="{% static 'css/entry-725103a0668ccb1789d4.css' %}">#}
-{##}
-{##}
-{#  <link href="//cdn2.jianshu.io/assets/favicons/favicon-e743bfb1821442341c3ab15bdbe804f7ad97676bd07a770ccc9483473aa76f06.ico" rel="shortcut icon" type="image/x-icon">#}
-{#      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/57-a6f1f1ee62ace44f6dc2f6a08575abd3c3b163288881c78dd8d75247682a4b27.png" sizes="57x57" />#}
-{#      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/72-fb9834bcfce738fd7b9c5e31363e79443e09a81a8e931170b58bc815387c1562.png" sizes="72x72" />#}
-{#      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/76-49d88e539ff2489475d603994988d871219141ecaa0b1a7a9a1914f4fe3182d6.png" sizes="76x76" />#}
-{#      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/114-24252fe693524ed3a9d0905e49bff3cbd0228f25a320aa09053c2ebb4955de97.png" sizes="114x114" />#}
-{#      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/120-1bb7371f5e87f93ce780a5f1a05ff1b176828ee0d1d130e768575918a2e05834.png" sizes="120x120" />#}
-{#      <link rel="apple-touch-icon-precomposed" href="//cdn2.jianshu.io/assets/apple-touch-icons/152-bf209460fc1c17bfd3e2b84c8e758bc11ca3e570fd411c3bbd84149b97453b99.png" sizes="152x152" />#}
-{#</head>#}
-{##}
-{#<body class="no-padding reader-black-font" lang="zh-CN">#}
-{#  <div class="sign">#}
-{#    <div class="logo"><h1><a href="/" style="color: #C25100;">Django Girls Blog</a></h1></div>#}
-{#    <div class="main">#}
-{##}
-{##}
-{#<h2 class="title">#}
-{#  <div class="normal-title ">#}
-{#    <a class="active" href="/">Login</a>#}
-{#  </div>#}
-{#</h2>#}
-{##}
-{##}
-{#<div class="js-sign-in-container">#}
-{#  <form id="new_session" action="/sessions" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="vE0ipIC6/BYyW/N7L0+NbTKvGFke5pKjh3uiA5OhnyjgcQQ8WkWmujRMAoNDTlExX0q21Q8hJ42whBuerpLzLA==" />#}
-{##}
-{#    <!-- 正常登录登录名输入框 -->#}
-{#      <div class="input-prepend restyle js-normal">#}
-{#        <input placeholder="手机号或邮箱" type="text" name="session[email_or_mobile_number]" id="session_email_or_mobile_number" />#}
-{#        <i class="iconfont ic-user"></i>#}
-{#      </div>#}
-{##}
-{#    <!-- 海外登录登录名输入框 -->#}
-{##}
-{#    <div class="input-prepend">#}
-{#      <input placeholder="密码" type="password" name="session[password]" id="session_password" />#}
-{#      <i class="iconfont ic-password"></i>#}
-{#    </div>#}
-{#    <input value="false" type="hidden" name="session[oversea]" id="session_oversea" />#}
-{#    <div>#}
-{#      <input id="sign-in-form-captcha-challenge" name="captcha[validation][challenge]" autocomplete="off" type="hidden">#}
-{#      <input id="sign-in-form-captcha-gt" name="captcha[validation][gt]" autocomplete="off" type="hidden">#}
-{#      <input id="sign-in-form-captcha-validate" name="captcha[validation][validate]" autocomplete="off" type="hidden">#}
-{#      <input id="sign-in-form-captcha-seccode" name="captcha[validation][seccode]" autocomplete="off" type="hidden">#}
-{#    </div>#}
-{##}
-{##}
-{#    <button class="sign-in-button" id="sign-in-form-submit-btn" type="button">#}
-{#      <span id="sign-in-loading"></span>#}
-{#      登录#}
-{#    </button>#}
-{#</form>#}
-{##}
-{#</div>#}
-{##}
-{#    </div>#}
-{#  </div>#}
-{##}
-{#  <!-- Javascripts#}
-{#  ================================================== -->#}
-{#  <!-- Placed at the end of the document so the pages load faster -->#}
-{#  <script type="application/json" data-name="page-data">{"user_signed_in":false,"locale":"zh-CN","os":"windows","read_mode":"day","read_font":"font2"}</script>#}
-{##}
-{#  <script src="//cdn2.jianshu.io/assets/web-base-cefe908fc6f745b51a6e.js" crossorigin="anonymous"></script>#}
-{#<script src="//cdn2.jianshu.io/assets/web-fbc9b0ef6f8c206492eb.js" crossorigin="anonymous"></script>#}
-{#<script src="//cdn2.jianshu.io/assets/web/pages/common/signin/entry-ea458a3a8ae693ca1b9d.js" crossorigin="anonymous"></script>#}
-{##}
-{#</body>#}
-{#</html>#}
-
-
 <!DOCTYPE html>
-<html lang="zh_CN">
-    <head>
-        <title>Login Page</title>
-
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-    </head>
-    <body>
-        <div class="containerWrapper">
-            <div class="container">
-                <div class="sidebar">
-                    <a href="/" class="back back--home">
-                        <span class="back__text">Home</span>
-                    </a>
-                    <a href="/" class="logo">Junyu's Blog</a>
-                </div>
-
-                <div class="content">
-                    <nav class="navigation">
-                        <ul>
-                            <li class="active">
-                                <a>Log in</a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="login">
-                        <div class="wrapper">
-                            <div class="login__wrapper">
-                                <p class="login__header">
-                                    If you are already registered with <strong>Ocado</strong>
-                                    , you can log in using the same details below.
-                                </p>
-                                <div class="login__regular">
-
-                                    <div class="login__form">
+<html>
+<head>
+    <title>Login</title>
 
 
-                                        <form method="post" action="{% url 'login' %}">
-                                            {% csrf_token %}
-                                            <table>
-                                                <tr>
-                                                    <input type="text" placeholder="Username" name="username" autofocus="" autocapitalize="off" autocomplete="username" required="" id="id_username">
-                                                </tr>
-                                                <tr>
-                                                    <input type="password" placeholder="Password" name="password" autocomplete="current-password" required="" id="id_password">
-                                                </tr>
-                                            </table>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
 
-                                            <input class="button login__submit" type="submit" value="Log in"/>
-                                            <input type="hidden" name="next" value="{{ next }}"/>
-                                        </form>
-                                    </div>
-                                </div>
+{#    <link href="http://res.scholat.com/scholat/styles/scholat/login.gzcss?_dc=74104bcc4c0"#}
+{#          rel="stylesheet" type="text/css"/>#}
+
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body style="background-color: #3a3d3c">
+
+
+
+
+<div id="div_header" style="background-color: #eaeaea;">
+    <div id="div_headernav">
+        <div id="div_headernav_left" >
+            <a href="/" target="_self" style="color: rgb(219,98,12);font-size: 18pt;"> <h1>Junyu's Blog</h1></a>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div style="background-color: #C25100">
+    <div id=loginmain>
+
+
+        <div id="loginmain_left">
+            University of Birmingham
+            <br/>
+            <br/>
+            The "best" university in the world.
+        </div>
+
+
+        <div id="loginmain_right">
+
+
+            <div>
+                <div
+                        style="margin-left: 20px; text-align: center; background-color: white; height: 230px;padding-top: 40px; padding-bottom: 20px;">
+
+
+
+                    <form method="post" action="{% url 'login' %}" id="loginForm">
+                        {% csrf_token %}
+
+                        <div id="logindiv" style="margin-bottom: 24px;">
+                            <div style="font-weight: bold; float: left; margin-left: 32px; margin-bottom: 5px;">
+                                Username
                             </div>
+                            <br>
+                            <input type="text"  name="username" autofocus="" autocapitalize="off" autocomplete="username"
+                                   tabindex="1" class="c_input" placeholder="Username" value="" required=""/>
                         </div>
-                    </div>
+
+
+                        <div id="logindiv" style="margin-bottom: 34px;">
+                            <div style="font-weight: bold; float: left; margin-left: 32px; margin-bottom: 5px;">
+                                Password
+                            </div>
+                            <br>
+                            <input id="j_password_ext" name="password" autocomplete="current-password"
+                                   type="password" tabindex="2" class="c_input" value=""
+                                   placeholder="Password" autocomplete="current-password" required=""/>
+                        </div>
+
+
+                        <div id="logindiv" style="padding-top: 30px;">
+                            <input id="login" value="Log in" type="submit" class="c_button"
+                                   tabindex="3"/>
+
+                        </div>
+
+                        <input type="hidden" name="next" value="{{ next }}"/>
+                    </form>
+
+
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+
+
+
+    <div id=logbot
+         style="width: 100%; margin: 0 auto; text-align: center; border: 0; background-color: #3a3d3c">
+        <div
+                style="padding: 20px 0; line-height: 28px; font-size: 14px; color: #fff">
+            <span>Junyu's Blog</span>
+            <br/>
+            Contact:JXC1259@student.bham.ac.uk
+        </div>
+    </div>
+</div>
+
+
+
+</body>
 </html>
-
-

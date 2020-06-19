@@ -1,0 +1,159 @@
+@charset "utf-8";body,p,b,dl,dd,table,td,th,input,button,textarea,xmp,pre,img,form,div,ul,ol,li,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+
+button,input,select,textarea {
+    font-size: 100%;
+}
+
+img,input,label,button {
+    vertical-align: middle;
+}
+
+a {
+    color: #1C1C1C;
+    text-decoration: none;
+}
+
+#div_header {
+    width: 100%;
+    height: 100px;
+    background: #eee;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+#div_headernav {
+    position: relative;
+    margin: 0 auto;
+    width: 960px;
+    height: 26px;
+}
+
+#div_headernav_left {
+    width: 400px;
+    float: left;
+    margin-top: 10px;
+}
+
+#div_headernav_left iframe {
+    background-color: transparent;
+}
+
+#div_headernav_right {
+    width: 300px;
+    height: 26px;
+    line-height: 26px;
+    float: right;
+    text-align: right;
+    margin-top: 70px;
+}
+
+#loginmain {
+    height: 380px;
+    width: 960px;
+    margin: 0 auto;
+    border: 0 solid #C25100;
+    border-top: 0 solid #ccc;
+    font-family: 'Georgia',Georgia,'Times New Roman',Times,'Microsoft YaHei',SimSun,SimHei,serif;
+}
+
+#loginmain_left {
+    padding-left: 10px;
+    width: 584px;
+    float: left;
+    border: 0 solid #C25100;
+    margin-top: 20px;
+    padding-top: 80px;
+    text-align: center;
+    color: white;
+    line-height: 48px;
+    font: bold 40px Georgia;
+}
+
+#loginmain_right {
+    width: 360px;
+    height: 320px;
+    float: left;
+    background-color: transparent;
+    margin-top: 20px;
+    margin-right: 0;
+    padding-top: 30px;
+}
+
+#logindiv {
+    height: 40px;
+}
+
+#logindiv a {
+    font-size: 15px;
+    margin: 10px;
+    color: #C25100;
+}
+
+#logindiv span {
+    font-size: 15px;
+    padding-right: 10px;
+}
+
+#loginmain_right li {
+    height: 25px;
+    margin: 13px 10px;
+    text-align: center;
+}
+
+#loginmain_right .count {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#loginmain_right .c_input {
+    background-color: #fafafa;
+    padding: 2px 5px 0px;
+    height: 26px;
+    font-size: 18px;
+    font-family: 'Georgia', Georgia, 'Times New Roman', Times, 'Microsoft YaHei', SimSun, SimHei, serif;
+    width: 260px;
+    margin-left: -5px;
+    border: 1px #cd5700 solid;
+    outline-color: #dc5d00;
+}
+
+
+
+#loginmain_right .c_button {
+
+    background-color: #646464;
+    /*border: 1px #fff solid;*/
+    color: #fff;
+    font-family: 'Georgia',Georgia,'Times New Roman',Times,'Microsoft YaHei',SimSun,SimHei,serif;
+    border: 0;
+    font-size: 18px;
+    width: 272px;
+    height: 36px;
+    margin-right: 4px;
+    outline-color: #dc5d00;
+
+}
+
+#loginmain a:hover {
+    text-decoration: underline;
+}
+
+#logbot a {
+    font-size: 12px;
+    color: #fff;
+}
+
+#logbot a:hover {
+    color: #F15191;
+    text-decoration: underline;
+}
+
+/*input[type=text]:focus, input[type=password]:focus, select:focus {*/
+/*    background-color: #fff;*/
+/*    padding-left: 12px;*/
+/*    border-color: rgba(68, 194, 0, 0.64);*/
+/*    border-width: 2px;*/
+/*    outline: none;*/
+/*}*/
