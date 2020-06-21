@@ -11,9 +11,6 @@ def post_list(request):
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-
-
-
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -23,8 +20,7 @@ def post_detail(request, pk):
             return redirect('post_detail', pk=post.pk)
     else:
         form = CommentForm()
-    # return render(request, 'blog/add_comment_to_post.html', {'form': form})
-    return render(request, 'blog/post_detail.html', {'post': post, 'form': form})
+        return render(request, 'blog/post_detail.html', {'post': post, 'form': form})
 
 @login_required
 def post_new(request):

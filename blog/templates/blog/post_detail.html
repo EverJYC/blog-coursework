@@ -71,11 +71,11 @@
                     {{ comment.created_date }}
                     {% if user.is_authenticated %}
                         <!-- 按钮触发模态框 -->
-                        <a class="normal-tabs" data-toggle="modal" data-target="#comment_remove" href="">
+                        <a class="normal-tabs" data-toggle="modal" data-target="#comment_remove{{ comment.pk }}" href="">
                             <span class="glyphicon glyphicon-remove"></span>
                         </a>
                         <!-- 模态框（Modal） -->
-                        <div class="modal fade" id="comment_remove" tabindex="-1" role="dialog"
+                        <div class="modal fade" id="comment_remove{{ comment.pk }}" tabindex="-1" role="dialog"
                              aria-labelledby="myModalLabel"
                              aria-hidden="true">
                             <div class="modal-dialog">
