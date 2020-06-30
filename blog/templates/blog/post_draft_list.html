@@ -6,7 +6,7 @@
             <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
 {#            <div class="post-abstract"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></div>#}
 {#            <p>{{ post.text|truncatechars:200 }}</p>#}
-                            <h2 class="post-title"><a target="_blank" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                            <h2 style="word-break: keep-all;word-wrap: break-word;width: 80%;"><a target="_blank" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
                          <div class="post-abstract">
                     {{ post.text|linebreaksbr }}
                          </div>

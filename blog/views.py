@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, Http404
 from django.utils import timezone
 from blog.models import Post, Comment
 from .forms import PostForm, CommentForm
@@ -20,7 +20,10 @@ def post_detail(request, pk):
             return redirect('post_detail', pk=post.pk)
     else:
         form = CommentForm()
-        return render(request, 'blog/post_detail.html', {'post': post, 'form': form})
+        if not request.user.is_authenticated and not post.published_date:
+            return Http404
+        else:
+            return render(request, 'blog/post_detail.html', {'post': post, 'form': form})
 
 @login_required
 def post_new(request):
