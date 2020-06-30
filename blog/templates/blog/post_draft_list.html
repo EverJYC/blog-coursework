@@ -4,8 +4,13 @@
     {% for post in posts %}
         <div class="post">
             <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|truncatechars:200 }}</p>
+{#            <div class="post-abstract"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></div>#}
+{#            <p>{{ post.text|truncatechars:200 }}</p>#}
+                            <h2><a target="_blank" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                         <div class="post-abstract">
+                    {{ post.text|linebreaksbr }}
+                         </div>
+                    <a href="{% url 'post_detail' pk=post.pk %}"><i class="far fa-comments"></i> {{ post.approved_comments.count }}</a>
         </div>
     {% endfor %}
 {% endblock %}

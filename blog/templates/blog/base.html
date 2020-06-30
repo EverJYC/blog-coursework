@@ -33,9 +33,9 @@
         {% if user.is_authenticated %}
             <li><a href="{% url 'post_new' %}" ><span class="glyphicon glyphicon-plus"></span></a></li>
             <li><a href="{% url 'post_draft_list' %}" ><span class="glyphicon glyphicon-edit"></span></a></li>
-            <li><p><i class="far fa-user"></i> {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p></li>
+            <li><p><i class="far fa-user"></i> {{ user.username }} (<a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span></a>)</p></li>
         {% else %}
-            <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-lock"></span></a></li>
+            <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span></a></li>
         {% endif %}
 </ul>
 </div>
